@@ -267,11 +267,11 @@ footer {
     background: var(--primary-blue);
     color: #fff;
     text-align: center;
-    padding: 1.2rem 1rem;
-    font-size: 0.95rem; /* Ukuran font mobile */
+    padding: 1.5rem 1rem;
+    font-size: 0.70rem;
     letter-spacing: 1px;
     margin-top: 2rem;
-    border-radius: 0; /* Tidak ada radius di mobile */
+    border-radius: 0;
 }
 
 
@@ -350,6 +350,10 @@ footer {
         margin: 0;
     }
 
+    .container.section-content{
+        text-align: center;
+    }
+
 
     /* === PERUBAHAN POIN 3 === */
 /* --- DESKTOP HERO SECTION --- */
@@ -425,11 +429,63 @@ footer {
 
 
     /* --- DESKTOP FOOTER --- */
-    footer {
+    /* footer {
         font-size: 1rem;
         border-top-left-radius: 18px;
         border-top-right-radius: 18px;
-    }
+    } */
+
+footer {
+    background-color: var(--primary-blue);
+    color: rgba(255, 255, 255, 0.8); 
+    padding: 1rem 1rem; 
+    margin-top: 4rem;
+    text-align: center;
+    border-radius: 0;
+}
+
+/* Opsional: Kontainer di dalam footer untuk layout yang lebih kompleks */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: var(--white-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--tosca); /* Menggunakan warna aksen dari tema */
+}
+
+.social-icons a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--tosca);
+    transform: scale(1.2);
+}
+
+/* Style untuk hak cipta */
+.copyright {
+    flex-basis: 100%; /* Agar mengambil satu baris penuh jika diperlukan */
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
 }
 
 
