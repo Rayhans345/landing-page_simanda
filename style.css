@@ -1,0 +1,453 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+/* --- CUSTOM PROPERTIES / VARIABLES --- */
+:root {
+    --primary-blue: #0A2647;
+    --secondary-blue: #144272;
+    --accent-blue: #205295;
+    --light-bg: #f8f9fa;
+    --white-color: #ffffff;
+    --text-color: #333;
+    --tosca: #009990;
+    --gray: #c9c9c9;
+}
+
+
+/* --- RESET & GLOBAL STYLES (MOBILE FIRST) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    letter-spacing: 0.01em;
+    background: #fff;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Padding lebih kecil untuk mobile */
+}
+
+
+h1, h2, h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+
+h2 {
+    font-size: 2rem; /* Ukuran font mobile */
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+section {
+    padding: 4rem 0; /* Padding mobile */
+    margin: 0 0 1.5rem 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(20, 66, 114, 0.04);
+}
+
+
+main {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+
+
+
+/* --- HEADER & NAVIGATION (MOBILE FIRST) --- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 100;
+    padding: 0.7rem 1rem; /* Padding mobile */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+/* Ini menjadi wrapper/kontainer untuk logo dan teks */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Memberi jarak antara gambar dan teks */
+    text-decoration: none; /* Hapus dekorasi jika ada */
+}
+
+/* Styling khusus untuk gambar logo */
+.logo img {
+    height: 38px; /* Ukuran logo mobile disesuaikan dari 48px */
+    display: block;
+}
+
+/* === PERUBAHAN POIN 4 === */
+/* Teks logo disembunyikan di tampilan mobile */
+.logo-text {
+    display: none; 
+}
+
+
+.menu-toggle {
+    display: block; /* Tampilkan hamburger menu di mobile */
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+
+.nav-links {
+    display: none; /* Sembunyikan menu di mobile secara default */
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    top: 60px; /* Sesuaikan dengan tinggi header */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+
+.nav-links.active {
+    display: flex; /* Tampilkan saat menu di-toggle */
+}
+
+
+.nav-links li {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-blue);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+
+
+
+/* --- HERO SECTION (MOBILE FIRST) --- */
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100vh; 
+    color: #fff;
+    padding: 2rem 1.5rem;
+    position: relative;
+    background:
+        linear-gradient(180deg, rgba(10,38,71,0.0) 0%, rgba(10,38,71,0.7) 60%, var(--primary-blue) 95%),
+        url('tdp 7.jpg') no-repeat center top / cover;
+    border-radius: 0; 
+}
+
+
+.hero-content {
+    max-width: 100%;
+}
+
+
+.hero-content h1 {
+    font-size: 2.5rem; /* Ukuran font mobile */
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0 2px 16px rgba(20,66,114,0.10);
+}
+
+
+.hero-content p {
+    font-size: 1.1rem; /* Ukuran font mobile */
+    margin-bottom: 2.5rem;
+    color: #e0e6ed;
+}
+
+
+
+
+/* --- BUTTONS & FEATURES (MOBILE FIRST) --- */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #00c6ff, #0072ff, #00c6ff);
+    background-size: 200% 100%;
+    color: #fff;
+    padding: 12px 24px; /* Padding mobile */
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem; /* Ukuran font mobile */
+    letter-spacing: 1px;
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 24px rgba(0, 153, 144, 0.18);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.fitur-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolom untuk mobile */
+    gap: 1.5rem;
+}
+
+
+.fitur-item {
+    background: #fff;
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(20, 66, 114, 0.10);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+
+.fitur-item i {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 1.2rem;
+}
+
+
+
+
+/* --- KONTAK & FOOTER (MOBILE FIRST) --- */
+#kontak {
+    background-color: var(--secondary-blue);
+    border-radius: 10px; /* Radius mobile */
+}
+
+
+#kontak h2, #kontak p {
+    color: var(--white-color);
+}
+
+
+footer {
+    background: var(--primary-blue);
+    color: #fff;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: 0.95rem; /* Ukuran font mobile */
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    border-radius: 0; /* Tidak ada radius di mobile */
+}
+
+
+
+
+/* ───────────────────────────────────────────────────────────────── */
+/* │                         DESKTOP STYLES                          │ */
+/* ───────────────────────────────────────────────────────────────── */
+/* Gaya untuk layar 769px ke atas (tablet & desktop) */
+
+
+@media (min-width: 769px) {
+
+
+    .container {
+        padding: 0 2rem;
+    }
+
+
+    h2 {
+        font-size: 2.5rem; /* Kembalikan ukuran font desktop */
+    }
+
+
+    section {
+        padding: 6rem 0;
+        margin-bottom: 2.5rem;
+        border-radius: 18px;
+    }
+
+
+    /* --- DESKTOP NAVIGATION --- */
+    header {
+        padding: 1rem 0;
+    }
+
+
+    .logo img {
+        height: 48px; /* Kembalikan ukuran logo desktop */
+        width: 48px;
+    }
+
+    /* === PERUBAHAN POIN 4 === */
+    /* Teks logo ditampilkan kembali di desktop */
+    .logo-text {
+        display: block;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--primary-blue);
+        letter-spacing: 2px;
+    }
+    
+    .logo:hover img {
+        transform: scale(1.12) rotate(-6deg);
+    }
+
+
+    .menu-toggle {
+        display: none; /* Sembunyikan hamburger di desktop */
+    }
+
+
+    .nav-links {
+        display: flex; /* Tampilkan menu di desktop */
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        gap: 2.5rem;
+    }
+
+
+    .nav-links li {
+        margin: 0;
+    }
+
+
+    /* === PERUBAHAN POIN 3 === */
+/* --- DESKTOP HERO SECTION --- */
+   #hero {
+        /* 1. Jadikan #hero sebagai flex container untuk memusatkan isinya */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 4rem 1rem; /* Beri padding vertikal dan sedikit horizontal */
+        
+        /* 2. Latar belakang tetap full-width dengan overlay gelap agar teks terbaca */
+       background:
+            linear-gradient(90deg, rgba(10,38,71,0.98) 55%, rgba(10,38,71,0.2) 100%),
+            url('tdp 7.jpg') no-repeat right bottom/cover;
+    }
+
+    .hero-content {
+        /* 3. Buat .hero-content meniru .container dengan sempurna */
+        width: 100%;
+        max-width: 1100px; /* Lebar maksimal SAMA PERSIS dengan .container */
+        padding-left: 2rem; /* Padding SAMA PERSIS dengan .container di desktop */
+        padding-right: 2rem; /* Padding SAMA PERSIS dengan .container di desktop */
+        
+        /* 4. Reset style lama & pastikan teks rata kiri */
+        margin-left: 0;
+        text-align: left;
+    }
+
+    /* Style untuk text di dalam hero biarkan sama */
+    .hero-content h1 {
+        font-size: 3.8rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+    }
+
+
+
+    /* --- DESKTOP BUTTONS & FEATURES --- */
+    .cta-button {
+        padding: 16px 36px;
+        font-size: 1.15rem;
+    }
+
+
+    .cta-button:hover {
+        background-position: 100% 0;
+        transform: scale(1.08) translateY(-2px);
+        box-shadow: 0 8px 32px 0 rgba(0, 198, 255, 0.25);
+        border-color: #00c6ff;
+    }
+    
+    .fitur-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Grid responsif untuk desktop */
+        gap: 2.2rem;
+    }
+
+
+    .fitur-item {
+        padding: 2.2rem 1.5rem;
+    }
+
+
+    .fitur-item:hover {
+        transform: translateY(-10px) scale(1.04);
+        box-shadow: 0 8px 32px rgba(20, 66, 114, 0.16);
+    }
+
+
+
+
+    /* --- DESKTOP FOOTER --- */
+    footer {
+        font-size: 1rem;
+        border-top-left-radius: 18px;
+        border-top-right-radius: 18px;
+    }
+}
+
+
+
+
+/* --- ANIMASI (Tidak perlu diubah, berlaku untuk semua ukuran) --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.animate-fadeInUp {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+
+.animate-delay-1 { animation-delay: 0.3s; }
+.animate-delay-2 { animation-delay: 0.6s; }
+.animate-delay-3 { animation-delay: 0.9s; }
